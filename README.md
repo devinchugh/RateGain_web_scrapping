@@ -36,8 +36,7 @@
       <li>Output: Customize file names and paths for HTML and CSV files.</li>
   </ul>
 
-  <h2>Contributing</h2>
-  <p>Feel free to contribute to the project. Fork the repository and submit a pull request.</p>
+
 
   <h2>Acknowledgments</h2>
   <p>Thanks to the developers of BeautifulSoup and Selenium for their excellent tools.</p>
