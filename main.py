@@ -1,4 +1,4 @@
-import requests,os,csv
+import requests,os,csv,re
 from bs4 import BeautifulSoup
 import time
 from selenium import webdriver
@@ -37,8 +37,12 @@ def extractinfo(inputpath,outputpath):
 
         # Extract likes count
         likes_element = article.find('a', class_='zilla-likes').find('span')
-        likes_counts.append(likes_element.get_text()[0] if likes_element else 'N/A')
-        
+        if (likes_element):
+            temp = likes_element.get_text()
+            likes_counts.append(int(re.search(r'\d+', temp).group()))
+        else:
+            likes_counts.append('N/A')
+
         # Extract image URL
         try:
             img_element = article.find('div', class_='img').find('a')
